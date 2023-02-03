@@ -18,13 +18,13 @@ class AddShoppingItemDialog(context: Context , var addDialogListener: AddDialogL
 
         tvAdd.setOnClickListener {
             val name = etName.text.toString()
-            val amount = etAmount.text.toString().toInt()
+            val amount = etAmount.text.toString()
 
-            if(name.isNullOrEmpty()) {
-                Toast.makeText(context, "Please enter a name", Toast.LENGTH_SHORT).show()
+            if(name.isEmpty() || amount.isEmpty()) {
+                Toast.makeText(context, "Please enter all the information", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val item = ShoppingItem(name , amount)
+            val item = ShoppingItem(name , amount.toInt())
             addDialogListener.onAddButtonClicked(item)
             dismiss()
         }
