@@ -16,7 +16,6 @@ abstract class ShoppingDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-
         private var instance : ShoppingDatabase? = null
         private val LOCK = Any()
 
@@ -25,8 +24,6 @@ abstract class ShoppingDatabase : RoomDatabase() {
         }
 
         private fun createDatabase(context: Context) =
-            Room.databaseBuilder(context.applicationContext, ShoppingDatabase::class.java, "ShoppingDB").build()
+            Room.databaseBuilder(context.applicationContext, ShoppingDatabase::class.java, "ShoppingDB.db").build()
     }
-
-
 }
