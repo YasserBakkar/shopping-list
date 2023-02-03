@@ -3,6 +3,7 @@ package com.example.shoppinglist.data.db.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.math.BigInteger
 
 
 @Entity(tableName = "shopping-items")
